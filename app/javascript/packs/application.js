@@ -9,8 +9,6 @@
 import Vue from 'vue/dist/vue.esm'
 import App from '../components/app.vue'
 import Users from '../components/users/users.vue'
-var $ = require("jquery");
-
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(document.createElement('app'))
