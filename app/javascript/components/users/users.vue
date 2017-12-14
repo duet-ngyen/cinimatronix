@@ -1,14 +1,19 @@
 <template>
   <div id="app">
     User index
-    <div>
-      {{ users }}
+    <div v-for="user in users">
+      <User v-bind:user="user"/>
     </div>
   </div>
 </template>
 
 <script>
+  import User from './user.vue';
+
   export default {
+    components: {
+      User
+    },
     data: function(){
       return {
         users: []
