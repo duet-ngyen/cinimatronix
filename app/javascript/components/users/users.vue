@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     User index
-    {{ message }}
-    <div class="text-danger">
-      Hello there
+    <div>
+      {{ users }}
     </div>
   </div>
 </template>
@@ -12,10 +11,13 @@
   export default {
     data: function(){
       return {
-        message: "Hello world"
+        users: []
       }
     },
-    mounted: function(){
+
+    mounted: function (){
+      var self = this;
+
       $.ajax({
         url: "/users",
         dataType: "json",
@@ -24,7 +26,7 @@
           console.log('AJAX error');
         },
         success: function(response){
-          console.log(response)
+          self.users = response;
         }
       })
     }
