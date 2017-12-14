@@ -8,14 +8,15 @@
 // layout file, like app/views/layouts/application.html.erb
 import Vue from 'vue/dist/vue.esm'
 import App from '../components/app.vue'
+import Users from '../components/users/users.vue'
+var $ = require("jquery");
+
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(document.createElement('app'))
   const app = new Vue({
     el: '#app',
-    template: '<App/>',
-    components: { App }
+    template: '<Users/>',
+    components: { Users }
   })
-
-  console.log(app)
 })

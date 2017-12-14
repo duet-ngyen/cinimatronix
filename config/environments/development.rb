@@ -55,4 +55,5 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.x.webpacker[:dev_server_host] = 'http://localhost:3035/'
+  config.webpacker.check_yarn_integrity = false
 end
