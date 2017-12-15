@@ -5,7 +5,7 @@
       <Search v-on:search-user="searchUser"/>
     </div>
     <div v-for="user in users">
-      <User v-bind:user="user"/>
+      <User v-bind:user="user" v-on:del-user="delUser"/>
     </div>
   </div>
 </template>
@@ -57,6 +57,10 @@
             self.users = response;
           }
         })
+      },
+
+      delUser(user){
+        this.users = this.users.filter(function(u){return (u["id"] != user["id"])});
       }
     }
   }
